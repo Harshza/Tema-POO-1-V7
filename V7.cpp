@@ -132,7 +132,9 @@ int main()
     (*stk3) = *stk - *stk - *stk2;
     cout << *stk << '\n' << *stk2 << '\n' << *stk3 << '\n';
     *stk >> 'a' >> 'b' >> 'c';
-    *stk3 = (*stk - *stk);
+    *stk3 = (*stk - *stk2);
     cout << *stk << '\n' << *stk3;
+    *stk3 = *stk2 - *stk;
+    cout << "\n" << *stk3;
     return 0;
 }
