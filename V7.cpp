@@ -8,14 +8,22 @@ class Nod
     char info;
     Nod* next;
     public:
-    Nod(const char& x = '\0', Nod* urm = nullptr) // construct parametrizat pentru initializare
+    Nod(const char x = '\0', Nod* urm = nullptr) // construct parametrizat pentru initializare
     {
         info = x;
         next = urm;
     }
-    ~Nod(){ next = nullptr;}
-    inline Nod* Next() const{ return next;} // metode pentru accesarea campurilor private
-    inline char Info() const{ return info;}
+    ~Nod(){ 
+        next = nullptr;
+    }
+    inline Nod* get_next() const // metode pentru accesarea campurilor private
+    { 
+        return next;
+    }
+    inline char get_info() const
+    { 
+        return info;
+    }
 };
 
 class Stiva_de_caractere
@@ -31,8 +39,8 @@ public:
     char pop() // scoatem elementul din varful stivei si returnam valoarea
     {
         Nod* c = varf;
-        char ret = varf->Info();
-        varf = varf->Next(); // trecem la elementul urm
+        char ret = varf->get_info();
+        varf = varf->get_next(); // trecem la elementul urm
         delete c; //stergem elementul scos ca sa nu avem memory leaks
         return ret;
     }
@@ -43,20 +51,21 @@ public:
         varf = c;
     }
 
-    void top()const
+    void print_top()const
     {
-        cout << varf->Info();
+        cout << varf->get_info();
     }
 
     char get_top()const
     {
-        return varf->Info();
+        return varf->get_info();
     }
 
     ~Stiva_de_caractere()
     {
         while(!isempty()) // cat timp mai avem elemente in coada,stergem elementul din varf
             pop();
+        varf = nullptr;
     }
 
     Stiva_de_caractere& operator>>(const char& x)
@@ -81,9 +90,9 @@ public:
         Nod* c1 = this->varf,* c2 = S.varf;
         while(c1 && c2) // parcurg ambele stive cu pointeri pana una din ele se termina
         {
-            Ret->push(max(c1->Info(),c2->Info())); // adaug in noua stiva caracterul cu codul ASCII mai mare
-            c1 = c1->Next(); //trec la urm elemente
-            c2 = c2->Next();
+            Ret->push(max(c1->get_info(),c2->get_info())); // adaug in noua stiva caracterul cu codul ASCII mai mare
+            c1 = c1->get_next(); //trec la urm elemente
+            c2 = c2->get_next();
         }
         return *Ret;
     }
@@ -100,41 +109,30 @@ ostream& operator<<(ostream& os, Stiva_de_caractere& stk)
 
 int main()
 {
-    Stiva_de_caractere* stk = new Stiva_de_caractere();
-    *stk >> 'c' >> 'b' >> 'a';
-    while(!stk->isempty())
-    {
-        stk->top();
-        stk->pop();
-    }
+    Stiva_de_caractere stk;
+    stk >> 'c' >> 'b' >> 'a';
     cout << '\n';
-    stk->push('c');
-    stk->push('b');
-    stk->push('a');
-    while(!stk->isempty())
-    {
-        stk->top();
-        stk->pop();
-    }
+    stk.push('c');
+    stk.push('b');
+    stk.push('a');
     cout << '\n';
-    stk->push('c');
-    stk->push('b');
-    stk->push('a');
-    cout << *stk << '\n';
-    cout << stk->isempty();
+    stk.push('c');
+    stk.push('b');
+    stk.push('a');
+    cout << stk << '\n';
+    cout << stk.isempty();
     char v[] = "parola";
-    stk->inv(v);
-    cout << "\n" << v << " Sir de caractere returnat\n";
-    Stiva_de_caractere* stk2 = new Stiva_de_caractere();
-    *stk2 >> 'P' >> 'O' >> 'O' >> 'L' >> 'A' >> 'B' >> 'O' >> 'R' >> 'A' >> 'T' >> 'O' >> 'R';
-    *stk >> 'E' >> 'X' >> 'A' >> 'M' >> 'E' >> 'N';
-    Stiva_de_caractere* stk3;
-    (*stk3) = *stk - *stk - *stk2;
-    cout << *stk << '\n' << *stk2 << '\n' << *stk3 << '\n';
-    *stk >> 'a' >> 'b' >> 'c';
-    *stk3 = (*stk - *stk2);
-    cout << *stk << '\n' << *stk3;
-    *stk3 = *stk2 - *stk;
-    cout << "\n" << *stk3;
+    stk.inv(v);
+    cout <<"\nSir de caractere returnat:" << v << "\n";
+    Stiva_de_caractere stk2;
+    stk2 >> 'P' >> 'O' >> 'O' >> 'L' >> 'A' >> 'B' >> 'O' >> 'R' >> 'A' >> 'T' >> 'O' >> 'R';
+    stk >> 'E' >> 'X' >> 'A' >> 'M' >> 'E' >> 'N';
+    Stiva_de_caractere stk3;
+    stk3 = stk - stk - stk2;
+    cout << stk << '\n' << stk2 << '\n' << stk3 << '\n';
+    stk >> 'a' >> 'b' >> 'c';
+    stk3 = stk - stk;
+    cout << stk << '\n' << stk3 << "\n";
+    cout << "A mers modificarea";
     return 0;
 }
