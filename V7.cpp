@@ -24,6 +24,14 @@ class Nod
     { 
         return info;
     }
+    void set_next(Nod* urm)
+    {
+        next = urm;
+    }
+    void set_info(const char x)
+    {
+        info = x;
+    }
 };
 
 class Stiva_de_caractere
@@ -45,7 +53,7 @@ public:
         return ret;
     }
 
-    void push(const char& x)
+    void push(const char x)
     {
         Nod* c = new Nod(x,varf); // adaugam un nou nod,care duce catre vechiul varf
         varf = c;
@@ -68,7 +76,7 @@ public:
         varf = nullptr;
     }
 
-    Stiva_de_caractere& operator>>(const char& x)
+    Stiva_de_caractere& operator>>(const char x)
     {
         push(x);
         return *this;
@@ -96,16 +104,44 @@ public:
         }
         return *Ret;
     }
+
+    Stiva_de_caractere& operator=(const Stiva_de_caractere& S)
+    {
+        while(!isempty())
+            pop();
+        if(!S.isempty())
+        {
+            Nod *pas = S.varf;
+            varf = new Nod(pas->get_info());
+            pas = pas->get_next();
+            Nod *nod_anterior = varf;
+            while(pas)
+            {
+                Nod* nou_nod = new Nod(pas->get_info());
+                nod_anterior->set_next(nou_nod);
+                nod_anterior = nou_nod;
+                pas = pas->get_next();
+            }
+        }
+        return *this;
+    }
 };
 
-ostream& operator<<(ostream& os, Stiva_de_caractere& stk)
+/*ostream& operator<<(ostream& os, Stiva_de_caractere& stk)
 {
     while(!stk.isempty())
         os << stk.pop();
     return os;
+}*/
+
+ostream& operator<<(ostream& os, Stiva_de_caractere& stk)
+{
+    Stiva_de_caractere copie;
+    copie = stk;
+    while(!copie.isempty())
+        os << copie.pop();
+    return os;
 }
-
-
 
 int main()
 {
@@ -120,6 +156,8 @@ int main()
     stk.push('b');
     stk.push('a');
     cout << stk << '\n';
+    for(int i = 0; i < 9; i++)
+        stk.pop();
     cout << stk.isempty();
     char v[] = "parola";
     stk.inv(v);
@@ -130,9 +168,20 @@ int main()
     Stiva_de_caractere stk3;
     stk3 = stk - stk - stk2;
     cout << stk << '\n' << stk2 << '\n' << stk3 << '\n';
+    for(int i = 0; i < 6; i++)
+        stk.pop();
     stk >> 'a' >> 'b' >> 'c';
     stk3 = stk - stk;
     cout << stk << '\n' << stk3 << "\n";
-    cout << "A mers modificarea";
+    cout << "A mers modificarea\n";
+    for(int i = 0; i < 3; i++)
+        stk.pop();
+    stk >> 'a' >> 'b' >> 'c';
+    stk2 = stk;
+    stk.pop();
+    stk.pop();
+    stk.pop();
+    cout << stk << '\n' << stk2 << '\n';
+    cout << "Operatorul = a mers,deoarece acesta avea o valoare implicita si inainte,dar a sters-o si a copiat nod cu nod,nu doar pointer\n(se observa ca am dat clear la primul stack si al 2-lea a ramas neschimbat)";
     return 0;
 }
