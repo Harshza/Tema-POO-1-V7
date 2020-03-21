@@ -92,17 +92,17 @@ public:
             s[i] = pop(); // cum stiva functioneaza pe principiul FILO,pur si simplu adaugam elementele inapoi in sir
     }
 
-    Stiva_de_caractere& operator-(const Stiva_de_caractere& S)
+    Stiva_de_caractere operator-(const Stiva_de_caractere& S)
     {
-        Stiva_de_caractere* Ret = new Stiva_de_caractere();
+        Stiva_de_caractere Ret;
         Nod* c1 = this->varf,* c2 = S.varf;
         while(c1 && c2) // parcurg ambele stive cu pointeri pana una din ele se termina
         {
-            Ret->push(max(c1->get_info(),c2->get_info())); // adaug in noua stiva caracterul cu codul ASCII mai mare
+            Ret.push(max(c1->get_info(),c2->get_info())); // adaug in noua stiva caracterul cu codul ASCII mai mare
             c1 = c1->get_next(); //trec la urm elemente
             c2 = c2->get_next();
         }
-        return *Ret;
+        return Ret;
     }
 
     Stiva_de_caractere& operator=(const Stiva_de_caractere& S)
@@ -166,7 +166,7 @@ int main()
     stk2 >> 'P' >> 'O' >> 'O' >> 'L' >> 'A' >> 'B' >> 'O' >> 'R' >> 'A' >> 'T' >> 'O' >> 'R';
     stk >> 'E' >> 'X' >> 'A' >> 'M' >> 'E' >> 'N';
     Stiva_de_caractere stk3;
-    stk3 = stk - stk - stk2;
+    stk3 = stk - stk2;
     cout << stk << '\n' << stk2 << '\n' << stk3 << '\n';
     for(int i = 0; i < 6; i++)
         stk.pop();
