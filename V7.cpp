@@ -42,6 +42,24 @@ public:
 
     Stiva_de_caractere(){ varf = nullptr;} //constructor initializare stiva vida
 
+    Stiva_de_caractere(const Stiva_de_caractere& stk){
+        if(!stk.isempty())
+        {
+            Nod *pas = stk.varf;
+            varf = new Nod(pas->get_info());
+            pas = pas->get_next();
+            Nod *nod_anterior = varf;
+            while(pas)
+            {
+                Nod* nou_nod = new Nod(pas->get_info());
+                nod_anterior->set_next(nou_nod);
+                nod_anterior = nou_nod;
+                pas = pas->get_next();
+            }
+        }
+        else
+            varf = NULL;
+    }
     bool isempty() const { return !varf;}
 
     char pop() // scoatem elementul din varful stivei si returnam valoarea
@@ -134,7 +152,7 @@ public:
     return os;
 }*/
 
-ostream& operator<<(ostream& os, Stiva_de_caractere& stk)
+ostream& operator<<(ostream& os,const Stiva_de_caractere& stk)
 {
     Stiva_de_caractere copie;
     copie = stk;
