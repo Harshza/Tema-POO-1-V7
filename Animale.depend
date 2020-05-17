@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1589747397 source:d:\c++\poo\animale\main.cpp
+	<iostream>
+	<list>
+	"Pesti.h"
+	"Nevertebrate.h"
+
+1589721339 source:d:\c++\poo\animale\animal.cpp
+	"Animal.h"
+
+1589746929 d:\c++\poo\animale\animal.h
+	<iostream>
+	<string.h>
+
+1589742685 source:d:\c++\poo\animale\vertebrate.cpp
+	"Vertebrate.h"
+
+1589743591 d:\c++\poo\animale\vertebrate.h
+	"Animal.h"
+
+1589747452 source:d:\c++\poo\animale\pesti.cpp
+	"Pesti.h"
+
+1589746550 d:\c++\poo\animale\pesti.h
+	"Vertebrate.h"
+
+1589746941 d:\c++\poo\animale\nevertebrate.h
+	"Animal.h"
+
