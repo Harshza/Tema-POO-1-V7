@@ -2,15 +2,16 @@
 #define ANIMAL_H_INCLUDED
 
 #include <iostream>
-#include <string.h>
+#include <string>
+#include <unordered_map>
 
 class Animal{
     static int nr;
 public:
-    Animal();
-    ~Animal();
-    virtual void print(std::ostream &os)const=0;
-    virtual void read(std::istream &is)=0;
+    explicit Animal();
+    virtual ~Animal();
+    virtual void print(std::ostream &os)const;
+    friend std::ostream& operator<<(std::ostream &os,const Animal &A);
     static int nrAnimale();
 };
 

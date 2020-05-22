@@ -10,9 +10,9 @@ list<Animal*> L;
 
 int main()
 {
-    Animal *p = new Peste();
+    /*Animal *p = new Peste();
     auto ob = dynamic_cast<Peste*>(p);
     cin >> *ob;
-    cout << *ob;
+    cout << *ob;*/
     return 0;
 }

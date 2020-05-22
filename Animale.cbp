@@ -34,9 +34,18 @@
 		</Compiler>
 		<Unit filename="Animal.cpp" />
 		<Unit filename="Animal.h" />
+		<Unit filename="Atlaszoologic.cpp" />
+		<Unit filename="Atlaszoologic.h" />
+		<Unit filename="Mamifere.cpp" />
+		<Unit filename="Mamifere.h" />
+		<Unit filename="Nevertebrate.cpp" />
 		<Unit filename="Nevertebrate.h" />
+		<Unit filename="Pasari.cpp" />
+		<Unit filename="Pasari.h" />
 		<Unit filename="Pesti.cpp" />
 		<Unit filename="Pesti.h" />
+		<Unit filename="Reptile.cpp" />
+		<Unit filename="Reptile.h" />
 		<Unit filename="Vertebrate.cpp" />
 		<Unit filename="Vertebrate.h" />
 		<Unit filename="main.cpp" />
