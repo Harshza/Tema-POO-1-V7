@@ -4,7 +4,8 @@
 Pereche make_pereche(const int &a,const int &b){
     Pereche p(a,b);
     return p;
-}
+} //nush de ce,dar daca functia asta nu era pusa in main,imi dadea ca nu e definita,am cautat pe stack
+//si am vazut ca ar fi trb sa-i fac un intreg header si cpp separat
 
 int main()
 {
