@@ -7,12 +7,13 @@ class Coada_pereche : public Multime_pereche
 {
     public:
     Coada_pereche();
-    Coada_pereche(Coada_pereche &Q);
+    Coada_pereche(const int &n, Pereche *v);
+    Coada_pereche(const Coada_pereche &Q);
     ~Coada_pereche();
-    bool isempty();
-    Pereche& pop();
+    virtual void print(std::ostream &os)const;
+    virtual void read(std::istream &is);
+    Pereche pop();
     Pereche& front();
-    void clear();
 };
 
 #endif // COADA_PERECHE_H_INCLUDED

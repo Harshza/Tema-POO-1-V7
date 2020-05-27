@@ -7,12 +7,12 @@ class Stiva_pereche : public Multime_pereche
 {
     public:
     Stiva_pereche();
-    Stiva_pereche(Stiva_pereche &stk);
+    Stiva_pereche(const int &n, Pereche *v);
+    Stiva_pereche(const Stiva_pereche &stk);
     ~Stiva_pereche();
-    friend std::ostream& operator<<(std::ostream &os, const Stiva_pereche &stk);
-    bool isempty();
+    virtual void print(std::ostream &os)const;
+    virtual void read(std::istream &is);
     Pereche& pop();
     Pereche& top();
-    void clear();
 };
 #endif // STIVA_PERECHE_H_INCLUDED

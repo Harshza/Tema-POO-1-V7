@@ -32,10 +32,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Coada_pereche.cpp" />
+		<Unit filename="Coada_pereche.h" />
 		<Unit filename="Multime_pereche.cpp" />
 		<Unit filename="Multime_pereche.h" />
 		<Unit filename="Pereche.cpp" />
 		<Unit filename="Pereche.h" />
+		<Unit filename="SimulareStiva.cpp" />
+		<Unit filename="SimulareStiva.h" />
+		<Unit filename="Stiva_pereche.cpp" />
 		<Unit filename="Stiva_pereche.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
