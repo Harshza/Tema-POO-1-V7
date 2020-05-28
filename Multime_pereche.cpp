@@ -2,13 +2,13 @@
 
 Multime_pereche::Multime_pereche(){
     nr = 0;
-    capacity = 10;
+    capacity = INITIAL_CAPACITY;
     p = new Pereche[capacity];
 }
 
-Multime_pereche::Multime_pereche(const int &n, Pereche *v){
+Multime_pereche::Multime_pereche(int n, Pereche *v){
     nr = 0;
-    capacity = 10;
+    capacity = INITIAL_CAPACITY;
     p = new Pereche[capacity];
     for(int i = 0; i < n; i++)
         push(v[i]); //folosim push in caz ca avem dubluri in v
@@ -139,7 +139,7 @@ bool Multime_pereche::isempty(){
 
 void Multime_pereche::clear(){
     nr = 0;
-    capacity = 10; //ducem inapoi in "starea initiala" a multimii
+    capacity = INITIAL_CAPACITY; //ducem inapoi in "starea initiala" a multimii
     Pereche *del = p;
     p = new Pereche[capacity];
     delete[] del;

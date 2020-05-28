@@ -1,9 +1,8 @@
 #include "Stiva_pereche.h"
 #include "SimulareStiva.h"
 
-Pereche make_pereche(const int &a,const int &b){
-    Pereche p(a,b);
-    return p;
+Pereche make_pereche(int a, int b){
+    return Pereche(a, b);
 }
 
 int main()

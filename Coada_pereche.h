@@ -7,7 +7,7 @@ class Coada_pereche : public Multime_pereche
 {
     public:
     Coada_pereche();
-    Coada_pereche(const int &n, Pereche *v);
+    Coada_pereche(int n, Pereche *v);
     Coada_pereche(const Coada_pereche &Q);
     ~Coada_pereche();
     virtual void print(std::ostream &os)const;

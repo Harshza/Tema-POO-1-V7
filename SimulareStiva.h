@@ -7,7 +7,7 @@ class SimulareStiva{
     Coada_pereche q1, q2;
 public:
     SimulareStiva();
-    SimulareStiva(const int &n, Pereche *v);
+    SimulareStiva(int n, Pereche *v);
     SimulareStiva(const SimulareStiva &stk);
     ~SimulareStiva();
     SimulareStiva& operator=(const SimulareStiva &stk);

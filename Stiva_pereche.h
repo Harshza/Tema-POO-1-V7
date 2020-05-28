@@ -7,7 +7,7 @@ class Stiva_pereche : public Multime_pereche
 {
     public:
     Stiva_pereche();
-    Stiva_pereche(const int &n, Pereche *v);
+    Stiva_pereche(int n, Pereche *v);
     Stiva_pereche(const Stiva_pereche &stk);
     ~Stiva_pereche();
     virtual void print(std::ostream &os)const;

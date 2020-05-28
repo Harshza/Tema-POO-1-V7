@@ -5,11 +5,12 @@
 
 class Multime_pereche{
 protected:
+    static const int INITIAL_CAPACITY = 10;
     int nr,capacity;
     Pereche *p;
 public:
     Multime_pereche();
-    Multime_pereche(const int &n, Pereche *v);
+    Multime_pereche(int n, Pereche *v);
     Multime_pereche(const Multime_pereche &M);
     ~Multime_pereche();
     Multime_pereche& operator=(const Multime_pereche &M);

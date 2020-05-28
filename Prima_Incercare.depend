@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1590621377 source:d:\c++\poo\tema_2\prima_incercare\main.cpp
+1590697215 source:d:\c++\poo\tema_2\prima_incercare\main.cpp
 	"Stiva_pereche.h"
 	"SimulareStiva.h"
 
@@ -9,33 +9,33 @@
 1588070084 d:\c++\poo\tema_2\prima_incercare\vector.h
 	<iostream>
 
-1590611860 source:d:\c++\poo\tema_2\prima_incercare\pereche.cpp
+1590697519 source:d:\c++\poo\tema_2\prima_incercare\pereche.cpp
 	"Pereche.h"
 
-1590611860 d:\c++\poo\tema_2\prima_incercare\pereche.h
+1590697519 d:\c++\poo\tema_2\prima_incercare\pereche.h
 	<iostream>
 
-1590616815 source:d:\c++\poo\tema_2\prima_incercare\multime_pereche.cpp
+1590698001 source:d:\c++\poo\tema_2\prima_incercare\multime_pereche.cpp
 	"Multime_pereche.h"
 
-1590616816 d:\c++\poo\tema_2\prima_incercare\multime_pereche.h
+1590697949 d:\c++\poo\tema_2\prima_incercare\multime_pereche.h
 	"Pereche.h"
 
-1590616833 source:d:\c++\poo\tema_2\prima_incercare\stiva_pereche.cpp
+1590697519 source:d:\c++\poo\tema_2\prima_incercare\stiva_pereche.cpp
 	"Stiva_pereche.h"
 
-1590616833 d:\c++\poo\tema_2\prima_incercare\stiva_pereche.h
+1590697222 d:\c++\poo\tema_2\prima_incercare\stiva_pereche.h
 	"Multime_pereche.h"
 
-1590616833 source:d:\c++\poo\tema_2\prima_incercare\coada_pereche.cpp
+1590697519 source:d:\c++\poo\tema_2\prima_incercare\coada_pereche.cpp
 	"Coada_pereche.h"
 
-1590616833 d:\c++\poo\tema_2\prima_incercare\coada_pereche.h
+1590697519 d:\c++\poo\tema_2\prima_incercare\coada_pereche.h
 	"Multime_pereche.h"
 
-1590621347 source:d:\c++\poo\tema_2\prima_incercare\simularestiva.cpp
+1590697520 source:d:\c++\poo\tema_2\prima_incercare\simularestiva.cpp
 	"SimulareStiva.h"
 
-1590621119 d:\c++\poo\tema_2\prima_incercare\simularestiva.h
+1590697519 d:\c++\poo\tema_2\prima_incercare\simularestiva.h
 	"Coada_pereche.h"
 

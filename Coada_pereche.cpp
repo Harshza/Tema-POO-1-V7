@@ -2,7 +2,7 @@
 
 Coada_pereche::Coada_pereche() = default;
 
-Coada_pereche::Coada_pereche(const int &n, Pereche *v) : Multime_pereche(n, v) {}
+Coada_pereche::Coada_pereche(int n, Pereche *v) : Multime_pereche(n, v) {}
 
 Coada_pereche::Coada_pereche(const Coada_pereche &stk) : Multime_pereche(stk.nr, stk.p) {}
 

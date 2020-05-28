@@ -2,7 +2,7 @@
 
 Pereche::Pereche() = default;
 
-Pereche::Pereche(const int &_x, const int &_y) : x(_x), y(_y) {}
+Pereche::Pereche(int _x, int _y) : x(_x), y(_y) {}
 
 Pereche::Pereche(const Pereche &p) : x(p.x), y(p.y) {}
 
@@ -32,11 +32,11 @@ int Pereche::second() const{
     return y;
 }
 
-void Pereche::setfirst(const int &_x){
+void Pereche::setfirst(int _x){
     x = _x;
 }
 
-void Pereche::setsecond(const int &_y){
+void Pereche::setsecond(int _y){
     y = _y;
 }
 
@@ -54,7 +54,7 @@ Pereche& Pereche::operator+(const Pereche &p){
     return *this;
 }
 
-Pereche& Pereche::operator+(const int &i){
+Pereche& Pereche::operator+(int i){
     x += i;
     y += i;
     return *this;

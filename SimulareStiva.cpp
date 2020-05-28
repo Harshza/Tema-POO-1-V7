@@ -2,7 +2,7 @@
 
 SimulareStiva::SimulareStiva() = default;
 
-SimulareStiva::SimulareStiva(const int &n, Pereche *v) : q1(n, v) {}
+SimulareStiva::SimulareStiva(int n, Pereche *v) : q1(n, v) {}
 
 SimulareStiva::SimulareStiva(const SimulareStiva &stk) : q1(stk.q1), q2(stk.q2) {}
 

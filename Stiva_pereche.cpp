@@ -2,7 +2,7 @@
 
 Stiva_pereche::Stiva_pereche() = default;
 
-Stiva_pereche::Stiva_pereche(const int &n, Pereche *v) : Multime_pereche(n, v) {}
+Stiva_pereche::Stiva_pereche(int n, Pereche *v) : Multime_pereche(n, v) {}
 
 Stiva_pereche::Stiva_pereche(const Stiva_pereche &stk) : Multime_pereche(stk.nr, stk.p) {}
 
