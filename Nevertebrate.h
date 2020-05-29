@@ -7,12 +7,14 @@ class Nevertebrata : public Animal{
     std::string rasa;
 public:
     explicit Nevertebrata();
-    explicit Nevertebrata(std::string r);
-    Nevertebrata(const Nevertebrata &V);
+    explicit Nevertebrata(const std::string &r);
+    Nevertebrata(const Nevertebrata &N);
     virtual ~Nevertebrata()override;
+
     virtual void print(std::ostream &os)const;
-    friend std::istream& operator>>(std::istream &is,Nevertebrata &N);
-    Nevertebrata& operator=(const Nevertebrata &P);
+    virtual void read(std::istream &is);
+
+    Nevertebrata& operator=(const Nevertebrata &N);
 };
 
 #endif // NEVERTEBRATE_H_INCLUDED

@@ -10,7 +10,7 @@ enum Rasa{
 std::string Translatie(Rasa r);
 
 
-static std::unordered_map<std::string,Rasa>const conv = {{"peste", Rasa::peste}, {"pasare", Rasa::pasare},
+static std::unordered_map<std::string, Rasa>const conv = {{"peste", Rasa::peste}, {"pasare", Rasa::pasare},
                                                          {"mamifer", Rasa::mamifer}, {"reptila", Rasa::reptila}};
 
 class Vertebrata : public Animal{
@@ -20,13 +20,19 @@ protected:
     double lungime;
 public:
     explicit Vertebrata();
-    explicit Vertebrata(std::string r, bool rap, double l);
+    explicit Vertebrata(const std::string &r, bool rap, double l);
     Vertebrata(const Vertebrata &V);
     virtual ~Vertebrata() override;
+
     virtual void print(std::ostream &os)const;
+    virtual void read(std::istream &is);
+
     void setLungime(double l);
+
     virtual std::string getRasa()const = 0;
+
     bool isRapitor();
+
     double getLungime()const;
 };
 

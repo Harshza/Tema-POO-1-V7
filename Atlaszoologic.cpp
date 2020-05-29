@@ -51,6 +51,8 @@ Atlaszoologic<Peste>::Atlaszoologic(): v({}), n(0){
 Atlaszoologic<Peste>::Atlaszoologic(Atlaszoologic<Peste> &A): v(A.v), n(A.n){
 }
 
+Atlaszoologic<Peste>::~Atlaszoologic() = default;
+
 std::ostream& operator<<(std::ostream& os,const Atlaszoologic<Peste> &A){
     for(Peste x : A.v)
         os << x;

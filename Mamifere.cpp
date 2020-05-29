@@ -15,23 +15,27 @@ void Mamifer::print(std::ostream &os) const{
     Vertebrata::print(os);
 }
 
+void Mamifer::read(std::istream &is){
+    std::string s;
+    is >> s;
+    if(s == "rapitor")
+        rapitor = true;
+    else
+        rapitor = false;
+    is >> lungime;
+    try{
+        if(lungime < 0)
+            throw "Lungimea este un nr pozitiv in general,o punem 0.\n";
+        }catch(const char *e){
+            std::cout << e;
+            lungime = 0;
+        }
+}
+
 std::string Mamifer::getRasa()const{
     return "mamifer";
 }
 
-std::istream& operator>>(std::istream &is,Mamifer &P){
-    std::string r;
-    is >> r;
-    auto i = conv.find(r);
-    P.rasa = i->second;
-    is >> r;
-    if(r == "rapitor")
-        P.rapitor = true;
-    else
-        P.rapitor = false;
-    is >> P.lungime;
-    return is;
-}
 
 Mamifer& Mamifer::operator=(const Mamifer &P){
     rasa = P.rasa;
@@ -39,3 +43,4 @@ Mamifer& Mamifer::operator=(const Mamifer &P){
     lungime = P.lungime;
     return *this;
 }
+

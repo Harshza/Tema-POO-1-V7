@@ -8,11 +8,15 @@ public:
     explicit Reptila();
     explicit Reptila(bool rap, double l);
     Reptila(const Reptila &P);
+
     virtual ~Reptila()override;
+
     virtual void print(std::ostream &os) const;
+    virtual void read(std::istream &is);
+
     virtual std::string getRasa()const;
-    friend std::istream& operator>>(std::istream &is,Reptila &P);
     Reptila& operator=(const Reptila &P);
 };
 
 #endif // REPTILE_H_INCLUDED
+

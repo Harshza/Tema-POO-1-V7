@@ -8,11 +8,15 @@ public:
     explicit Mamifer();
     explicit Mamifer(bool rap, double l);
     Mamifer(const Mamifer &P);
+
     virtual ~Mamifer()override;
+
     virtual void print(std::ostream &os) const;
+    virtual void read(std::istream &is);
+
     virtual std::string getRasa()const;
-    friend std::istream& operator>>(std::istream &is,Mamifer &P);
     Mamifer& operator=(const Mamifer &P);
 };
 
 #endif // MAMIFERE_H_INCLUDED
+

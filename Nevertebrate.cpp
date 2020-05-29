@@ -2,7 +2,7 @@
 
 Nevertebrata::Nevertebrata() = default;
 
-Nevertebrata::Nevertebrata(std::string r) : rasa(r){
+Nevertebrata::Nevertebrata(const std::string &r) : rasa(r){
 }
 
 Nevertebrata::Nevertebrata(const Nevertebrata &V) : rasa(V.rasa){}
@@ -13,9 +13,8 @@ void Nevertebrata::print(std::ostream &os)const{
     os << "Nevertebrata de rasa " << rasa << ".\n";
 }
 
-std::istream& operator>>(std::istream &is,Nevertebrata &N){
-    is >> N.rasa;
-    return is;
+void Nevertebrata::read(std::istream &is){
+    is >> rasa;
 }
 
 Nevertebrata& Nevertebrata::operator=(const Nevertebrata &P){

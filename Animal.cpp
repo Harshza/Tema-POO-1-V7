@@ -10,15 +10,16 @@ Animal::~Animal(){
     nr--;
 }
 
-void Animal::print(std::ostream &os)const{
-    return;
-}
-
 std::ostream& operator<<(std::ostream &os,const Animal &A){
     A.print(os);
     return os;
 }
 
-Animal::nrAnimale(){
+std::istream& operator>>(std::istream &is, Animal &A){
+    A.read(is);
+    return is;
+}
+
+int Animal::nrAnimale(){
     return nr;
 }
